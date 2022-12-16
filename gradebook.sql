@@ -8,5 +8,5 @@ CREATE TABLE student(
     chemistry int,
     biology int,
     english int,
-    percent float,
+    percent float(20),
 )
