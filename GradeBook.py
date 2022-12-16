@@ -1,8 +1,9 @@
+#importing and setting up sql
 import mysql.connecter as sql
 mycon = sql.connect(host = "local host",user = "root", password ="dudedivishere", database = "School")
 a = 0
 mycur = mycon.cursor()
-
+#defining the adds function
 def adds():
   n = input("Enter Name: ")
   r = input("Enter Roll Number: ")
@@ -16,13 +17,13 @@ def adds():
   val = (name, roll, math, english, physics, biology, chemistry, percent)
   mycur.execute(s,val)
   mycon.commit()
-
+#defining the dels function
 def dels():
   a = int(input("Roll Number: "))
   s = "DELETE FROM students WHERE Rol_Number = {}"
   mycur.execute(s,a)
   mycon.commit()
-
+#defining the finds function
 def finds():
   a = float(input("Disqualifying Percentage: "))
   s = "select * from student where Roll_Number >= {}"
@@ -32,7 +33,7 @@ def finds():
   for x in myresult:
     print(x)
   mycon.commit()
-
+#defining the updates function
 def updates():
   r=int(input("Roll Number:"))
   print("Enter 1.Maths\n2.English\n3.Physics\n4.Biology\n5.Chemistry")
