@@ -20,7 +20,7 @@ def adds():
 #defining the dels function
 def dels():
   a = int(input("Roll Number: "))
-  s = "DELETE FROM students WHERE Rol_Number = {}"
+  s = "DELETE FROM students WHERE Roll_Number = {}"
   mycur.execute(s,a)
   mycon.commit()
 #defining the finds function
